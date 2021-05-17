@@ -53,41 +53,43 @@ Car CarRepo::del(int id){
   return NULL_CAR;
 }
 
-bool CarRepo::find(const Car &car)
+Car CarRepo::findOne(int id)
 {
 
   for (int i = 0; i < this->list.size(); i++)
   {
-    if (this->list[i].checker(car))
-      return true;
+    if (this->list[i].get_Id() == id)
+      return list[i];
   }
-  return false;
+  //Throw RepoError("Masina nu exista");
+  return NULL_CAR;
 }
 
-void CarRepo::update_Kilometers(Car &car, int _kilometers)
+void CarRepo::update_Kilometers(int id, int _kilometers)
 {
 
-  if (find(car) == false)
+  if (findOne(id) == NULL_CAR)
     throw exception();
 
   for (int i = 0; i < this->list.size(); i++)
   {
-    if (this->list[i].checker(car))
+    //if findOne(id) == NULL_Car Throw RepoError("Masina nu exista");
+    if (this->list[i].checker(findOne(id)))
     {
       this->list[i].set_Kilometers(_kilometers);
     }
   }
 }
 
-void CarRepo::update_Price(Car &car, int _price)
+void CarRepo::update_Price(int id, int _price)
 {
 
-  if (find(car) == false)
+  if (findOne(id) == NULL_CAR)
     throw exception();
 
   for (int i = 0; i < this->list.size(); i++)
   {
-    if (this->list[i].checker(car))
+    if (this->list[i].checker(findOne(id)))
       this->list[i].set_Price(_price);
   }
 }

@@ -19,9 +19,9 @@ namespace Repository
     Car save(Car entity);
     //bool remove(const Car &car);
     Car del(int id);
-    bool find(const Car &car);
-    void update_Kilometers(Car &car, int _kilometers);
-    void update_Price(Car &car, int _price);
+    Car findOne(int id);
+    void update_Kilometers(int id, int _kilometers);
+    void update_Price(int id, int _price);
     int size();
     //vector<Car> getAll();
     vector<Car> findAll();

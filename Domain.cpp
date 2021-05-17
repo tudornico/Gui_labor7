@@ -71,5 +71,8 @@ bool Car::checker(Car other)
   return false;
 }
 
+bool Car::operator==(const Car& other){
+  return checker(other);
+}
 
 Car::~Car() = default;

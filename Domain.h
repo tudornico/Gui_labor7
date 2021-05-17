@@ -19,9 +19,12 @@ namespace Domain
     void set_Kilometers(int _kilometers);
     void set_Price(int _price);
     bool checker(Car other);
-
+    bool operator==(const Car &other);
     //static member function
-    int get_Id() { return thisID; };
+    int get_Id()
+    {
+      return thisID;
+    };
 
     ~Car();
 
