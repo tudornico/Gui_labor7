@@ -12,19 +12,19 @@ Car CarController::del(int id)
   return this->repo.del(id);
 }
 
-Car CarController::findOne(int id)
+Car CarController::find(int id)
 {
-  return repo.findOne(id);
+  return repo.find(id);
 }
 
 void CarController::update_Kilometers(Car &car, int _kilometers)
 {
-  this->repo.update_Kilometers(car, _kilometers);
+  this->repo.update_Kilometers(car.get_Id(), _kilometers);
 }
 
 void CarController::update_Price(Car &car, int _price)
 {
-  this->repo.update_Price(car, _price);
+  this->repo.update_Price(car.get_Id(), _price);
 }
 
 vector<Car> CarController::findAll()
@@ -111,7 +111,23 @@ vector<Car> CarController::filterByAgeAndKilometers(int age, int kilometers)
   }
   return result;
 }
-
+void CarController::renewfile() {
+vector<Car> copy_list;
+copy_list=findAll();
+ofstream myfile;
+myfile.open("All_file");
+remove("All_file");
+for(int i=0;i<copy_list.size();i++)
+{
+    myfile<<copy_list[i].get_Model()<<",";
+    myfile<<copy_list[i].get_Brand()<<",";
+    myfile<<copy_list[i].get_Fuel()<<",";
+    myfile<<copy_list[i].get_Year()<<",";
+    myfile<<copy_list[i].get_Kilometers()<<",";
+    myfile<<copy_list[i].get_Price()<<"\n";
+}
+myfile.close();
+}
 vector<Car> CarController::sortByPrice()
 {
   vector<Car> copy_list;
