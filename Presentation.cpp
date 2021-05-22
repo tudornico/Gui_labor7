@@ -104,21 +104,24 @@ void Console::manager_run()
       new_car = reader();
       //_ctrl.add(new_car);
       _ctrl.save(new_car);
+      _ctrl.renewfile();
     }
 
     if (command == "remove")
     {
       new_car = reader();
       _ctrl.del(new_car.get_Id());
+      _ctrl.renewfile();
     }
 
     if (command == "find")
     {
       new_car = reader();
-      auto elem = _ctrl.findOne(new_car.get_Id());
+      auto elem = _ctrl.find(new_car.get_Id());
       if (elem.get_Power() != -1)   //if it is not the NULL_Car
       cout << "The car is in the list\n";
       else cout << "The car isn't in the list\n";
+      _ctrl.renewfile();
     }
     if (command == "update price")
     {
@@ -127,6 +130,7 @@ void Console::manager_run()
       int new_price;
       cin >> new_price;
       _ctrl.update_Price(new_car, new_price);
+      _ctrl.renewfile();
     }
 
     if (command == "update kilometers")
@@ -137,12 +141,14 @@ void Console::manager_run()
       int new_km;
       cin >> new_km;
       _ctrl.update_Kilometers(new_car, new_km);
+      _ctrl.renewfile();
     }
 
     if (command == "all")
     {
       result = _ctrl.findAll();
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "find1")
@@ -182,6 +188,7 @@ void Console::manager_run()
       cin >> yearofregistration;
       result = _ctrl.filterByAge(yearofregistration);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "filter2")
@@ -192,6 +199,7 @@ void Console::manager_run()
       cin >> km;
       result = _ctrl.filterByKilometers(km);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "filter3")
@@ -204,6 +212,7 @@ void Console::manager_run()
       cin >> km;
       result = _ctrl.filterByAgeAndKilometers(yearofregistration, km);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "sort")
@@ -261,11 +270,12 @@ void Console::customer_run(Kunde &client)
     if (command == "find")
     {
       new_car = reader();
-      auto elem = _ctrl.findOne(new_car.get_Id());
+      auto elem = _ctrl.find(new_car.get_Id());
       if (elem.get_Power() != -1) //if it is not the NULL_Car
         cout << "The car is in the list\n";
       else
         cout << "The car isn't in the list\n";
+      _ctrl.renewfile();
     }
 
     if (command == "update price")
@@ -275,6 +285,7 @@ void Console::customer_run(Kunde &client)
       int new_price;
       cin >> new_price;
       _ctrl.update_Price(new_car, new_price);
+      _ctrl.renewfile();
     }
 
     if (command == "update kilometers")
@@ -285,12 +296,15 @@ void Console::customer_run(Kunde &client)
       int new_km;
       cin >> new_km;
       _ctrl.update_Kilometers(new_car, new_km);
+      _ctrl.renewfile();
     }
 
     if (command == "all")
     {
       result = _ctrl.findAll();
       printer(result);
+      _ctrl.renewfile();
+
     }
 
     if (command == "find1")
@@ -300,6 +314,7 @@ void Console::customer_run(Kunde &client)
       cin >> brand;
       result = _ctrl.findBrand(brand);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "find2")
@@ -309,6 +324,7 @@ void Console::customer_run(Kunde &client)
       cin >> model;
       result = _ctrl.findModel(model);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "find3")
@@ -321,6 +337,7 @@ void Console::customer_run(Kunde &client)
       cin >> model;
       result = _ctrl.findBrandAndModel(brand, model);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "filter1")
@@ -330,6 +347,7 @@ void Console::customer_run(Kunde &client)
       cin >> yearofregistration;
       result = _ctrl.filterByAge(yearofregistration);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "filter2")
@@ -339,6 +357,7 @@ void Console::customer_run(Kunde &client)
       cin >> km;
       result = _ctrl.filterByKilometers(km);
       printer(result);
+      _ctrl.renewfile();
     }
 
     if (command == "filter3")
@@ -415,7 +434,7 @@ Car Console::remove(Car &car)
 
 Car Console::find(Car &car)
 {
-  return this->_ctrl.findOne(car.get_Id());
+  return this->_ctrl.find(car.get_Id());
 }
 
 void Console::update_Price(Car &car, int _price)
