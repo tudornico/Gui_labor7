@@ -18,10 +18,10 @@ Domain :: Car store(string model,string brand ,string fuel,int year,int km,int p
     Domain::Car new_object(model,brand,fuel,year,km,price,power);
     return new_object;
 }
-void reader::on_Submit_button_clicked()
+Domain::Car reader::on_Submit_button_clicked()
 {std::ofstream my_file;
-    
-    my_file.open("data_base");
+
+
    const std::string model=ui->Model_line->text().toStdString();
    const std::string brand=ui->Brand_line->text().toStdString();
    const std::string fuel=ui->Fuel_line->text().toStdString();
@@ -30,8 +30,8 @@ void reader::on_Submit_button_clicked()
    const int price=ui->Price_line->text().toInt();
    const int power=ui->Power_line->text().toInt();
 
-    my_file<<model<<" "<<brand<<" "<<fuel<<" "<<year<<" "<<km<<" "<<price<<" "<<power<<"\n";
-    my_file.close();
+    Car car(model,brand,fuel,year,km,price,power);
     this->close();
+    return car;
 }
 
