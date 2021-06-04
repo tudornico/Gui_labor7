@@ -17,7 +17,7 @@ public:
 
 
 private slots:
-    void on_Submit_button_clicked();
+    Domain::Car on_Submit_button_clicked();
 
 private:
     Ui::reader *ui;
