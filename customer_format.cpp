@@ -55,6 +55,6 @@ void Customer_format::on_pushButton_clicked()
 
 void Customer_format::on_Exit_button_clicked()
 {
-    ui->close();
+    //ui->close();
 }
 
