@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CarsList</class>
+ <widget class="QWidget" name="CarsList">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>845</width>
+    <height>474</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="table_cars">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>731</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string>1.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>2.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>3.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>4.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>5.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>6.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>7.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>8.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>9.</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>10.</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>Model</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Brand</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Fuel</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Registration Year</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Kilometers</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Price</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Power</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>A5</string>
+    </property>
+   </item>
+   <item row="0" column="1">
+    <property name="text">
+     <string>Audi</string>
+    </property>
+   </item>
+   <item row="0" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="0" column="3">
+    <property name="text">
+     <string>2017</string>
+    </property>
+   </item>
+   <item row="0" column="4">
+    <property name="text">
+     <string>1000</string>
+    </property>
+   </item>
+   <item row="0" column="5">
+    <property name="text">
+     <string>10000</string>
+    </property>
+   </item>
+   <item row="0" column="6">
+    <property name="text">
+     <string>100</string>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="text">
+     <string>Logan</string>
+    </property>
+   </item>
+   <item row="1" column="1">
+    <property name="text">
+     <string>Dacia</string>
+    </property>
+   </item>
+   <item row="1" column="2">
+    <property name="text">
+     <string>Benzin</string>
+    </property>
+   </item>
+   <item row="1" column="3">
+    <property name="text">
+     <string>2019</string>
+    </property>
+   </item>
+   <item row="1" column="4">
+    <property name="text">
+     <string>2000</string>
+    </property>
+   </item>
+   <item row="1" column="5">
+    <property name="text">
+     <string>5000</string>
+    </property>
+   </item>
+   <item row="1" column="6">
+    <property name="text">
+     <string>90</string>
+    </property>
+   </item>
+   <item row="2" column="0">
+    <property name="text">
+     <string>Tiguan</string>
+    </property>
+   </item>
+   <item row="2" column="1">
+    <property name="text">
+     <string>Volkswagen</string>
+    </property>
+   </item>
+   <item row="2" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="2" column="3">
+    <property name="text">
+     <string>2020</string>
+    </property>
+   </item>
+   <item row="2" column="4">
+    <property name="text">
+     <string>500</string>
+    </property>
+   </item>
+   <item row="2" column="5">
+    <property name="text">
+     <string>20000</string>
+    </property>
+   </item>
+   <item row="2" column="6">
+    <property name="text">
+     <string>110</string>
+    </property>
+   </item>
+   <item row="3" column="0">
+    <property name="text">
+     <string>Cabriolet</string>
+    </property>
+   </item>
+   <item row="3" column="1">
+    <property name="text">
+     <string>BMW</string>
+    </property>
+   </item>
+   <item row="3" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="3" column="3">
+    <property name="text">
+     <string>2020</string>
+    </property>
+   </item>
+   <item row="3" column="4">
+    <property name="text">
+     <string>700</string>
+    </property>
+   </item>
+   <item row="3" column="5">
+    <property name="text">
+     <string>70000</string>
+    </property>
+   </item>
+   <item row="3" column="6">
+    <property name="text">
+     <string>150</string>
+    </property>
+   </item>
+   <item row="4" column="0">
+    <property name="text">
+     <string>Polo</string>
+    </property>
+   </item>
+   <item row="4" column="1">
+    <property name="text">
+     <string>Volkswagen</string>
+    </property>
+   </item>
+   <item row="4" column="2">
+    <property name="text">
+     <string>Benzin</string>
+    </property>
+   </item>
+   <item row="4" column="3">
+    <property name="text">
+     <string>2015</string>
+    </property>
+   </item>
+   <item row="4" column="4">
+    <property name="text">
+     <string>100000</string>
+    </property>
+   </item>
+   <item row="4" column="5">
+    <property name="text">
+     <string>2000</string>
+    </property>
+   </item>
+   <item row="4" column="6">
+    <property name="text">
+     <string>90</string>
+    </property>
+   </item>
+   <item row="5" column="0">
+    <property name="text">
+     <string>Q7</string>
+    </property>
+   </item>
+   <item row="5" column="1">
+    <property name="text">
+     <string>Audi</string>
+    </property>
+   </item>
+   <item row="5" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="5" column="3">
+    <property name="text">
+     <string>2015</string>
+    </property>
+   </item>
+   <item row="5" column="4">
+    <property name="text">
+     <string>25000</string>
+    </property>
+   </item>
+   <item row="5" column="5">
+    <property name="text">
+     <string>75000</string>
+    </property>
+   </item>
+   <item row="5" column="6">
+    <property name="text">
+     <string>100</string>
+    </property>
+   </item>
+   <item row="6" column="0">
+    <property name="text">
+     <string>X6</string>
+    </property>
+   </item>
+   <item row="6" column="1">
+    <property name="text">
+     <string>BMW</string>
+    </property>
+   </item>
+   <item row="6" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="6" column="3">
+    <property name="text">
+     <string>2021</string>
+    </property>
+   </item>
+   <item row="6" column="4">
+    <property name="text">
+     <string>0</string>
+    </property>
+   </item>
+   <item row="6" column="5">
+    <property name="text">
+     <string>80000</string>
+    </property>
+   </item>
+   <item row="6" column="6">
+    <property name="text">
+     <string>200</string>
+    </property>
+   </item>
+   <item row="7" column="0">
+    <property name="text">
+     <string>Range Rover Velar</string>
+    </property>
+   </item>
+   <item row="7" column="1">
+    <property name="text">
+     <string>Land Rover</string>
+    </property>
+   </item>
+   <item row="7" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="7" column="3">
+    <property name="text">
+     <string>2018</string>
+    </property>
+   </item>
+   <item row="7" column="4">
+    <property name="text">
+     <string>80000</string>
+    </property>
+   </item>
+   <item row="7" column="5">
+    <property name="text">
+     <string>50000</string>
+    </property>
+   </item>
+   <item row="7" column="6">
+    <property name="text">
+     <string>240</string>
+    </property>
+   </item>
+   <item row="8" column="0">
+    <property name="text">
+     <string>A6</string>
+    </property>
+   </item>
+   <item row="8" column="1">
+    <property name="text">
+     <string>Audi</string>
+    </property>
+   </item>
+   <item row="8" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="8" column="3">
+    <property name="text">
+     <string>2021</string>
+    </property>
+   </item>
+   <item row="8" column="4">
+    <property name="text">
+     <string>0</string>
+    </property>
+   </item>
+   <item row="8" column="5">
+    <property name="text">
+     <string>16790</string>
+    </property>
+   </item>
+   <item row="8" column="6">
+    <property name="text">
+     <string>150</string>
+    </property>
+   </item>
+   <item row="9" column="0">
+    <property name="text">
+     <string>Macan Facelift</string>
+    </property>
+   </item>
+   <item row="9" column="1">
+    <property name="text">
+     <string>Porsche</string>
+    </property>
+   </item>
+   <item row="9" column="2">
+    <property name="text">
+     <string>Diesel</string>
+    </property>
+   </item>
+   <item row="9" column="3">
+    <property name="text">
+     <string>2018</string>
+    </property>
+   </item>
+   <item row="9" column="4">
+    <property name="text">
+     <string>10000</string>
+    </property>
+   </item>
+   <item row="9" column="5">
+    <property name="text">
+     <string>30000</string>
+    </property>
+   </item>
+   <item row="9" column="6">
+    <property name="text">
+     <string>200</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="Label_cars">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; text-decoration: underline;&quot;&gt;Cars List&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_exit">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>440</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_back">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
