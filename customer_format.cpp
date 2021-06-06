@@ -12,11 +12,8 @@ Customer_format::Customer_format(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Customer_format)
 
-{   select_username new_username;
-    new_username.setModal(true);
-    new_username.exec();
-    this->current_client=new_username.get_client();
-    new_username.close();
+{
+
     ui->setupUi(this);
 
 }
@@ -26,9 +23,12 @@ Customer_format::~Customer_format()
     delete ui;
 
 }
+void Customer_format::set_client(Client::Kunde current_client){
+    this->current_client=current_client;
+}
 
 void Customer_format::on_Add_button_clicked()
-{
+{this->hide();
  reader new_reader;
  new_reader.setModal(true);
  new_reader.exec();
@@ -55,7 +55,7 @@ void Customer_format::on_Remove_button_clicked()
     id.setModal(true);
     id.exec();
     int my_id=id.get_id();
-
+    this->current_client.delete_favourite(my_id);
     this->show();
 }
 
@@ -63,7 +63,7 @@ void Customer_format::on_Remove_button_clicked()
 
 void Customer_format::on_Exit_button_clicked()
 {
-    this->destroy();
+    this->close();
 }
 
 
