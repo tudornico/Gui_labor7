@@ -3,44 +3,44 @@
 #include "reader.h"
 #include "Business.h"
 #include "id_reader.h"
+#include "QTableWidget"
+#include "carslist.h"
+#include "QString"
+#include "select_username.h"
 Customer_format::Customer_format(QWidget *parent) :
 
     QDialog(parent),
     ui(new Ui::Customer_format)
 
-{
+{   select_username new_username;
+    new_username.setModal(true);
+    new_username.exec();
+    this->current_client=new_username.get_client();
+    new_username.close();
     ui->setupUi(this);
 
+}
 
-}
-void Customer_format::set_username(string username)
-{
-    this->username=username;
-}
 Customer_format::~Customer_format()
 {
     delete ui;
+
 }
-std::vector<Client::Kunde> Customer_format::get_client_list(){
-    return this->client_list;
-}
+
 void Customer_format::on_Add_button_clicked()
 {
  reader new_reader;
  new_reader.setModal(true);
  new_reader.exec();
+ this->show();
  Domain::Car my_car=new_reader.get_car();
- for(int i=0;i<this->client_list.size();i++)
+ vector <Domain::Car> result=this->current_client.show_all();
+ for(int i=0;i<result.size();i++)
  {
-     if(this->client_list[i].get_name() == this->username){
-         this->client_list[i].add_favourite(my_car);
-     }
+     cout<<result[i].get_Brand();
  }
+ this->show();
 
-}
-
-void Customer_format::add_client(Client::Kunde client){
-    this->client_list.push_back(client);
 }
 
 void Customer_format::on_Find_button_clicked()
@@ -50,17 +50,13 @@ void Customer_format::on_Find_button_clicked()
 
 
 void Customer_format::on_Remove_button_clicked()
-{
+{   this->hide();
     id_reader id;
     id.setModal(true);
     id.exec();
     int my_id=id.get_id();
-    for(int i=0;i<this->client_list.size();i++)
-    {
-        if(this->client_list[i].get_name() == this->username){
-            this->client_list[i].delete_favourite(my_id);
-        }
-    }
+
+    this->show();
 }
 
 
@@ -72,7 +68,28 @@ void Customer_format::on_Exit_button_clicked()
 
 
 void Customer_format::on_all_button_clicked()
-{
+{CarsList *favourite_cars=new CarsList;
+QTableWidgetItem *square= new QTableWidgetItem;
 
+}
+
+
+
+
+
+
+void Customer_format::on_Back_button_clicked()
+{
+    this->close();
+}
+
+
+void Customer_format::on_switch_button_clicked()
+{   this->hide();
+    select_username new_username;
+    new_username.setModal(true);
+    new_username.exec();
+    this->current_client=new_username.get_client();
+    this->show();
 }
 
