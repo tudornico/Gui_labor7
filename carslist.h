@@ -2,7 +2,7 @@
 #define CARSLIST_H
 
 #include <QWidget>
-
+#include "Persistence.h"
 namespace Ui {
 class CarsList;
 }
@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::CarsList *ui;
+    Repository::CarRepo _rep;
 };
 
 #endif // CARSLIST_H
