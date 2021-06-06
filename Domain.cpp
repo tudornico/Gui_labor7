@@ -2,11 +2,12 @@
 #include <iomanip> //setprecision
 
 using namespace Domain;
-
+int Domain::Car::id;
 Car::Car(const string &model, const string &brand, const string &fuel, const int &yearofregistration,
          const int &kilometers, const int &price, const int &power)
 {
-  thisID = id++;
+
+  this->thisID = id++;
   this->model = model;
   this->brand = brand;
   this->fuel = fuel;
