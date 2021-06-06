@@ -75,10 +75,6 @@ void manager_format::on_button_all_clicked()
 {
     CarsList new_list;
     CarsList *switch_widget=new CarsList;
-    vector<Domain::Car> car_list=this->_rep.findAll();
-    for(int i=0;i<this->_rep.size();i++){
-
-    }
     switch_widget->show();
 
     this->hide();
