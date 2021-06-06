@@ -22,7 +22,7 @@ private slots:
 private:
     Ui::id_reader *ui;
     Customer_format c_format;
-    Manager_format m_format;
+    manager_format m_format;
 };
 
 #endif // ID_READER_H
