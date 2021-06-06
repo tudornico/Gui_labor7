@@ -21,27 +21,29 @@ My_UI::~My_UI()
 
 //right click go to slots
 void My_UI::on_Manager_button_clicked()
-{
+{   this->hide();
     manager_format m_format;
     m_format.setModal(true);
     m_format.exec();
+    this->show();
 
 
-    this->hide();
 }
 
 
 void My_UI::on_customer_button_clicked()
 {
-
-    //Customer_format c_format;
-    //c_format.setModal(true);
-    //c_format.exec();
-    select_username user;
-    user.setModal(true);
-    user.exec();
-
     this->hide();
+   //Customer_format c_format;
+   //c_format.setModal(true);
+   //c_format.exec();
+    select_username new_username;
+    new_username.setModal(true);
+    new_username.exec();
+
+
+    this->show();
+
 }
 
 
