@@ -1,11 +1,16 @@
 #include "carslist.h"
 #include "ui_carslist.h"
-
+#include <fstream>
 CarsList::CarsList(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CarsList)
 {
     ui->setupUi(this);
+    this->_rep.saveFromFile();
+    for(int i=0;i<this->_rep.size();i++){
+
+    }
+
 }
 
 CarsList::~CarsList()
