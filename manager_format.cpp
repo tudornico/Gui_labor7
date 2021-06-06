@@ -13,37 +13,13 @@ manager_format::manager_format(QWidget *parent) :
     ui(new Ui::manager_format)
 {
     ui->setupUi(this);
-    ifstream my_file("data_base.txt");
-    if(my_file.is_open())
-    {
-        string line;
-        while(getline(my_file,line))
-        {
-            stringstream ss(line);
-            const string model;
-            const string brand;
-            const string fuel;
-            const string year;
-            const string km;
-            const string price;
-            const string power;
-            getline(ss,model,',');
-            getline(ss,brand,',');
-            getline(ss,year,',');
-            getline(ss,km,',');
-            getline(ss,price,',');
-            getline(ss,power,',');
-            getline(ss,fuel,',');
-            Domain :: Car new_obj(model,brand,fuel,year,km,price,power);
-            
-        }
-    }
+    this->_rep.saveFromFile();
 }
 
 manager_format::~manager_format()
 {
     delete ui;
-   
+
 }
 void manager_format::manager_show(){
 
@@ -52,7 +28,7 @@ void manager_format::manager_show(){
 
 
 
-void manager_format::on_find_button_clicked()
+void manager_format::on_button_find_clicked()
 {
    id_reader new_id_reader;
    new_id_reader.setModal(true);
@@ -62,17 +38,32 @@ void manager_format::on_find_button_clicked()
 }
 
 
-void manager_format::on_remove_button_clicked()
+void manager_format::on_button_remove_clicked()
 {
     id_reader new_id_reader;
     new_id_reader.setModal(true);
     new_id_reader.exec();
     int id;
+
+    this->_rep.del(id);
+    std::ofstream my_file("C:/Qt/labor6oop/data_base.txt");
+    if(my_file.is_open() == false)
+    {
+        this->destroy();
+    }
+       my_file.clear();
+       std::vector<Domain::Car> car_list=this->_rep.findAll();
+    for(int i=0;i<car_list.size();i++){
+    my_file<<car_list[i].get_Model()<<","<<car_list[i].get_Brand()<<","<<car_list[i].get_Year()<<","
+   <<car_list[i].get_Kilometers()<<","<<car_list[i].get_Price()<<","<<car_list[i].get_Power()<<","<<car_list[i].get_Fuel();
+     my_file<<endl;
+   }
+   my_file.close();
 }
 
 
 
-void manager_format::on_exit_button_clicked()
+void manager_format::on_button_exit_clicked()
 {
     this->close();
 }
@@ -95,16 +86,18 @@ void manager_format::on_button_add_clicked()
      new_reader.exec();
      Domain::Car new_car=new_reader.get_car();
      this->_rep.save(new_car);
-     std::ofstream my_file("data_base.txt");
+     std::ofstream my_file("C:/Qt/labor6oop/data_base.txt");
      if(my_file.is_open() == false)
      {
          this->destroy();
      }
-
-     my_file<<endl;
-     my_file<<new_car.get_Model()<<","<<new_car.get_Brand()<<","<<new_car.get_Year()<<","
-    <<new_car.get_Kilometers()<<","<<new_car.get_Price()<<","<<new_car.get_Power()<<","<<new_car.get_Fuel();
-
+        my_file.clear();
+        std::vector<Domain::Car> car_list=this->_rep.findAll();
+     for(int i=0;i<car_list.size();i++){
+     my_file<<car_list[i].get_Model()<<","<<car_list[i].get_Brand()<<","<<car_list[i].get_Year()<<","
+    <<car_list[i].get_Kilometers()<<","<<car_list[i].get_Price()<<","<<car_list[i].get_Power()<<","<<car_list[i].get_Fuel();
+      my_file<<endl;
+    }
     my_file.close();
 }
 
