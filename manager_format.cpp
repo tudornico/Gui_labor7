@@ -43,7 +43,7 @@ void manager_format::on_button_remove_clicked()
     id_reader new_id_reader;
     new_id_reader.setModal(true);
     new_id_reader.exec();
-    int id;
+    int id=new_id_reader.get_id();
 
     this->_rep.del(id);
     std::ofstream my_file("C:/Qt/labor6oop/data_base.txt");
@@ -53,12 +53,14 @@ void manager_format::on_button_remove_clicked()
     }
        my_file.clear();
        std::vector<Domain::Car> car_list=this->_rep.findAll();
+       std::cout<<car_list[0].get_Id();
     for(int i=0;i<car_list.size();i++){
     my_file<<car_list[i].get_Model()<<","<<car_list[i].get_Brand()<<","<<car_list[i].get_Year()<<","
    <<car_list[i].get_Kilometers()<<","<<car_list[i].get_Price()<<","<<car_list[i].get_Power()<<","<<car_list[i].get_Fuel();
      my_file<<endl;
    }
    my_file.close();
+
 }
 
 
@@ -73,6 +75,10 @@ void manager_format::on_button_all_clicked()
 {
     CarsList new_list;
     CarsList *switch_widget=new CarsList;
+    vector<Domain::Car> car_list=this->_rep.findAll();
+    for(int i=0;i<this->_rep.size();i++){
+
+    }
     switch_widget->show();
 
     this->hide();
@@ -80,7 +86,7 @@ void manager_format::on_button_all_clicked()
 
 
 void manager_format::on_button_add_clicked()
-{
+{   this->hide();
      reader new_reader;
      new_reader.setModal(true);
      new_reader.exec();
@@ -99,5 +105,6 @@ void manager_format::on_button_add_clicked()
       my_file<<endl;
     }
     my_file.close();
+    this->show();
 }
 
