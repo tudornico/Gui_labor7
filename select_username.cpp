@@ -36,7 +36,10 @@ void select_username::on_Submit_button_clicked()
         Client::Kunde new_client(username);
         my_client=new_client;
     }
-
+    Customer_format c_format;
+    c_format.set_client(my_client);
+    c_format.setModal(true);
+    c_format.exec();
     this->close();
 }
 
