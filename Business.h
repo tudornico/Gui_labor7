@@ -1,7 +1,6 @@
 #pragma once
 #include "Persistence.h"
 #include <iostream>
-#include "fstream"
 using namespace std;
 using namespace Repository;
 
@@ -15,9 +14,9 @@ namespace Controller{
       //methods of car repo
       void save(const Car &car);
       Car del(int id);
-      Car find(int id);
-      void update_Kilometers(Car &car, int _kilometers); //oare const din add ne deranjeaza in update? (l-am introdus ca si constant, iar noi vrem sa il stergem)
-      void update_Price(Car &car, int _price);           //do we need const here too? - intrebare pentru prof
+      Car findOne(int id);
+      void update_Kilometers(int id, int _kilometers); //oare const din add ne deranjeaza in update? (l-am introdus ca si constant, iar noi vrem sa il stergem)
+      void update_Price(int id, int _price);           //do we need const here too? - intrebare pentru prof
       vector<Car> findAll();
 
       //individual methods of controller
@@ -28,9 +27,8 @@ namespace Controller{
       vector<Car> filterByKilometers(int kilometers);
       vector<Car> filterByAgeAndKilometers(int age, int kilometers);
       vector<Car> sortByPrice();
-
       ~CarController(){};
-      void renewfile();
+
     private:
       CarRepo & repo;
   };
