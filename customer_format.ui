@@ -52,7 +52,7 @@
     <string>Remove</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Update_button">
+  <widget class="QPushButton" name="switch_button">
    <property name="geometry">
     <rect>
      <x>590</x>
@@ -62,7 +62,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Update</string>
+    <string>Switch</string>
    </property>
   </widget>
   <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -79,7 +79,7 @@
 </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Backkk_button">
+  <widget class="QPushButton" name="Back_button">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -105,7 +105,7 @@
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="all_button">
    <property name="geometry">
     <rect>
      <x>220</x>
