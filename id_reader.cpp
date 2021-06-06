@@ -20,5 +20,6 @@ void id_reader::on_Submit_button_clicked()
 {
     int id=ui->ID_line->text().toInt();
     _id=id;
+    this->close();
 }
 
