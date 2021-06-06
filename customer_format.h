@@ -18,12 +18,14 @@ public:
     void Customer_show();
 
     void add_client(Client::Kunde client);
+    void set_client(Client::Kunde current_client);
 private slots:
     void on_Add_button_clicked();
 
     void on_Find_button_clicked();
 
     void on_Remove_button_clicked();
+
 
 
     void on_Exit_button_clicked();
