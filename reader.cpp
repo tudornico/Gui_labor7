@@ -3,6 +3,8 @@
 #include <QString>
 #include "Business.h"
 #include <fstream>
+std::string _model,_brand,_fuel;
+int _year,_km,_price,_power;
 reader::reader(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::reader)
@@ -18,7 +20,11 @@ Domain :: Car store(string model,string brand ,string fuel,int year,int km,int p
     Domain::Car new_object(model,brand,fuel,year,km,price,power);
     return new_object;
 }
-Domain::Car reader::on_Submit_button_clicked()
+Domain::Car reader::get_car(){
+    Domain::Car new_obj(_model,_brand,_fuel,_year,_km,_price,_power);
+    return new_obj;
+}
+void reader::on_Submit_button_clicked()
 {std::ofstream my_file;
 
 
@@ -30,8 +36,13 @@ Domain::Car reader::on_Submit_button_clicked()
    const int price=ui->Price_line->text().toInt();
    const int power=ui->Power_line->text().toInt();
 
-    Car car(model,brand,fuel,year,km,price,power);
+   _model=model;
+   _brand=brand;
+   _fuel=fuel;
+   _year=year;
+   _km=km;
+   _price=price;
+   _power=power;
     this->close();
-    return car;
 }
 
